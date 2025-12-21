@@ -1,6 +1,6 @@
 # My Website
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/Reptetion/mywebsite?style=social)](https://github.com/Reptetion/mywebsite/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Reptetion/mywebsite?style=social)](https://github.com/Reptetion/mywebsite/network)
-[![GitHub watchers](https://img.shields.io/github/watchers/Reptetion/mywebsite?style=social)](https://github.com/Reptetion/mywebsite/watchers)
-[![GitHub repo views](https://komarev.com/ghpvc/?username=Reptetion&repo=mywebsite&style=flat-square)](https://github.com/Reptetion/mywebsite)
+[![Commits](https://img.shields.io/github/commit-activity/y/Reptetion/mywebsite?style=flat-square)](https://github.com/Reptetion/mywebsite/commits)
+[![Last Commit](https://img.shields.io/github/last-commit/Reptetion/mywebsite?style=flat-square)](https://github.com/Reptetion/mywebsite/commits)
+[![Open Issues](https://img.shields.io/github/issues/Reptetion/mywebsite?style=flat-square)](https://github.com/Reptetion/mywebsite/issues)
+[![License](https://img.shields.io/github/license/Reptetion/mywebsite?style=flat-square)](https://github.com/Reptetion/mywebsite/blob/main/LICENSE)
