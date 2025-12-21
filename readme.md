@@ -1,5 +1,6 @@
-## Project Description
+# My Website
 
-* [live example](https://learning-zone.github.io/website-templates/startbootstrap-grayscale-1.0.3)
-
-![alt text](https://github.com/learning-zone/website-templates/blob/master/assets/startbootstrap-grayscale-1.0.3.png "startbootstrap-grayscale-1.0.3")
+[![GitHub Repo stars](https://img.shields.io/github/stars/Reptetion/mywebsite?style=social)](https://github.com/Reptetion/mywebsite/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Reptetion/mywebsite?style=social)](https://github.com/Reptetion/mywebsite/network)
+[![GitHub watchers](https://img.shields.io/github/watchers/Reptetion/mywebsite?style=social)](https://github.com/Reptetion/mywebsite/watchers)
+[![GitHub repo views](https://komarev.com/ghpvc/?username=Reptetion&repo=mywebsite&style=flat-square)](https://github.com/Reptetion/mywebsite)
