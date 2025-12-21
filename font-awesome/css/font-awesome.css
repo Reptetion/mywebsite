@@ -353,9 +353,6 @@
 .fa-pencil:before {
   content: "\f040";
 }
-.fa-map-marker:before {
-  content: "\f041";
-}
 .fa-adjust:before {
   content: "\f042";
 }
@@ -806,9 +803,6 @@
 .fa-flash:before,
 .fa-bolt:before {
   content: "\f0e7";
-}
-.fa-sitemap:before {
-  content: "\f0e8";
 }
 .fa-umbrella:before {
   content: "\f0e9";
