@@ -183,46 +183,6 @@ a:focus {
     }
 }
 
-.btn-circle {
-    width: 70px;
-    height: 70px;
-    margin-top: 15px;
-    padding: 7px 16px;
-    border: 2px solid #fff;
-    border-radius: 100%!important;
-    font-size: 40px;
-    color: #fff;
-    background: 0 0;
-    -webkit-transition: background .3s ease-in-out;
-    -moz-transition: background .3s ease-in-out;
-    transition: background .3s ease-in-out;
-}
-
-.btn-circle:hover,
-.btn-circle:focus {
-    outline: 0;
-    color: #fff;
-    background: rgba(255,255,255,.1);
-}
-
-.btn-circle i.animated {
-    -webkit-transition-property: -webkit-transform;
-    -webkit-transition-duration: 1s;
-    -moz-transition-property: -moz-transform;
-    -moz-transition-duration: 1s;
-}
-
-.btn-circle:hover i.animated {
-    -webkit-animation-name: pulse;
-    -moz-animation-name: pulse;
-    -webkit-animation-duration: 1.5s;
-    -moz-animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-timing-function: linear;
-}
-
 @-webkit-keyframes pulse {    
     0 {
         -webkit-transform: scale(1);
@@ -275,7 +235,7 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 50px; /* Previously 250px */
     }
 
     .resume-section {
@@ -359,4 +319,68 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
+}
+
+/* Icon row layout */
+.tech-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 12px;
+  margin-bottom: 3em;
+}
+
+/* Base icon behavior */
+.tech-row i {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s ease, text-shadow 0.25s ease;
+}
+
+/* Brand colors */
+.devicon-javascript-plain { color: #FFFF00; }
+.devicon-html5-plain { color: #F06529; }
+.devicon-css3-plain { color: #1572b6; }
+.devicon-nodejs-plain { color: #3c873a; }
+.devicon-github-plain { color: WHITE; }
+.devicon-git-plain { color: #F1502F; }
+.devicon-mongodb-plain { color: #47A248; }
+.devicon-vscode-plain { color: #007ACC; }
+
+/* Hover glow */
+.tech-row i:hover {
+  transform: translateY(-4px);
+  text-shadow: 0 0 12px currentColor;
+}
+
+/* Tooltip (TEXT ONLY) */
+.tech-row i::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Show tooltip */
+.tech-row i:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Mobile safety */
+@media (max-width: 576px) {
+  .tech-row {
+    gap: 14px;
+  }
 }
