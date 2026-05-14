@@ -59,6 +59,14 @@ a:focus {
     text-transform: uppercase;
 }
 
+.navbar-brand {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-size: 28px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
 .navbar-custom .navbar-brand {
     color: #fff;
     font-family: "Great Vibes", cursive;
