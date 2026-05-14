@@ -122,19 +122,40 @@ a:focus {
         linear-gradient(135deg, #020202 0%, #090909 35%, #050505 100%);
 }
 
-.intro::before {
-    content: "";
+/* A scrolling tile track made of 4 segments (seg1, seg2, seg1, seg2).
+    Each segment is viewport-wide and repeats its tile horizontally. The
+    track translates left continuously to simulate one long photo album
+    composed of the two tile images, looping seamlessly because the
+    sequence is duplicated. */
+.intro .tile-track {
     position: absolute;
-    inset: 0;
-    background-image: url("../img/website_intro_tile.jpg");
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 400vw; /* 4 x viewport width */
+    display: flex;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    transform: translateZ(0);
+    /* animation: move left by two viewports (seg1+seg2) to loop */
+    /* slowed per user request */
+    animation: tileScroll 240s linear infinite;
+}
+
+.intro .tile-seg {
+    flex: 0 0 100vw; /* each segment is viewport width */
+    height: 100%;
     background-repeat: repeat;
     background-size: 34% auto;
     background-position: 0 0;
     opacity: 0.16;
-    animation: introTileDrift 95s linear infinite;
     filter: saturate(0.9) contrast(1.05);
-    pointer-events: none;
 }
+
+.intro .tile-seg.seg1 { background-image: url("../img/website_intro_tile.jpg"); }
+.intro .tile-seg.seg2 { background-image: url("../img/website_intro_tile2.jpg"); }
+
 
 .intro::after {
     content: "";
@@ -149,13 +170,16 @@ a:focus {
     pointer-events: none;
 }
 
-@keyframes introTileDrift {
-    from {
-        background-position: 0 center;
-    }
+/* introTileDrift removed — replaced by the `tileScroll` continuous track animation. */
 
-    to {
-        background-position: -25% center;
+@keyframes tileScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-200vw); } /* move left by two viewports (seg1+seg2) */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro .tile-track {
+        animation: none !important;
     }
 }
 
