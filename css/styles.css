@@ -147,7 +147,7 @@ a:focus {
     overflow: hidden;
     transform: translateZ(0);
     /* animation: move left by two viewports (seg1+seg2) to loop */
-    /* slowed per user request */
+    /* slowed */
     animation: tileScroll 240s linear infinite;
 }
 
@@ -346,6 +346,10 @@ footer p {
 
 .devicon-mongodb-plain {
     color: #47a248;
+}
+
+.devicon-netlify-plain {
+    color: #00C7B7;
 }
 
 .devicon-vscode-plain {
