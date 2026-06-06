@@ -13,6 +13,12 @@ body {
     min-height: 100%;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     color: var(--text);
@@ -42,13 +48,153 @@ p {
 
 a {
     color: var(--accent);
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    text-decoration: none;
 }
 
-a:hover,
 a:focus {
     color: var(--accent);
     text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.container {
+    width: min(1170px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row::before,
+.row::after {
+    content: "";
+    display: table;
+}
+
+.row::after {
+    clear: both;
+}
+
+[class*="col-"] {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-lg-12,
+.col-md-8 {
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .col-md-8 {
+        width: 66.66666667%;
+    }
+
+    .col-md-offset-2 {
+        margin-left: 16.66666667%;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.list-inline {
+    list-style: none;
+    padding-left: 0;
+    margin-left: -5px;
+}
+
+.list-inline > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.nav {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.nav > li {
+    position: relative;
+    display: block;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar-header {
+    float: left;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding: 12px 15px;
+}
+
+.collapse {
+    display: block;
+}
+
+.navbar-collapse {
+    overflow: visible !important;
+}
+
+.navbar-nav {
+    margin: 0;
+}
+
+.navbar-right {
+    float: right !important;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-family: "Space Grotesk", "Arial Narrow", Arial, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
 }
 
 .navbar-custom {
@@ -73,31 +219,18 @@ a:focus {
     font-size: 2.7rem;
     font-weight: 400;
     letter-spacing: 1px;
-    line-height: 1;
+    line-height: 0.95;
     text-transform: none;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.16);
 }
 
-.navbar-custom .navbar-brand:focus,
-.navbar-custom .navbar-brand:hover {
-    color: #fff;
-}
-
 .navbar-custom .navbar-email a {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    letter-spacing: 0.8px;
+    letter-spacing: 0;
     text-transform: none;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.14);
-    transition: opacity 0.25s ease;
-}
-
-.navbar-custom .navbar-email a:hover,
-.navbar-custom .navbar-email a:focus {
-    color: #fff;
-    opacity: 0.8;
-    background: transparent;
 }
 
 @media (min-width: 768px) {
@@ -110,7 +243,7 @@ a:focus {
     }
 
     .navbar-custom.top-nav-collapse {
-        padding: 0;
+        padding: 8px 0;
         border-bottom: 1px solid var(--soft-border);
         background: #000;
     }
@@ -140,19 +273,17 @@ a:focus {
     top: 0;
     left: 0;
     height: 100%;
-    width: 400vw; /* 4 x viewport width */
+    width: 400vw;
     display: flex;
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
     transform: translateZ(0);
-    /* animation: move left by two viewports (seg1+seg2) to loop */
-    /* slowed */
     animation: tileScroll 240s linear infinite;
 }
 
 .intro .tile-seg {
-    flex: 0 0 100vw; /* each segment is viewport width */
+    flex: 0 0 100vw;
     height: 100%;
     background-repeat: repeat;
     background-size: 34% auto;
@@ -178,11 +309,9 @@ a:focus {
     pointer-events: none;
 }
 
-/* introTileDrift removed — replaced by the `tileScroll` continuous track animation. */
-
 @keyframes tileScroll {
     from { transform: translateX(0); }
-    to { transform: translateX(-200vw); } /* move left by two viewports (seg1+seg2) */
+    to { transform: translateX(-200vw); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -230,6 +359,14 @@ a:focus {
     background: linear-gradient(145deg, rgba(248, 68, 68, 0.07), var(--panel));
 }
 
+.focus-panel h4,
+.tile-tech h4 {
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
 .focus-panel p {
     margin-bottom: 18px;
 }
@@ -250,7 +387,7 @@ a:focus {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: transform 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    transition: none;
 }
 
 .btn-default {
@@ -260,13 +397,10 @@ a:focus {
     box-shadow: inset 0 0 0 rgba(248, 68, 68, 0);
 }
 
-.btn-default:hover,
 .btn-default:focus {
     color: #fff;
     background: rgba(248, 68, 68, 0.2);
     border-color: var(--accent);
-    box-shadow: 0 0 24px rgba(248, 68, 68, 0.5), inset 0 0 10px rgba(248, 68, 68, 0.3);
-    transform: translateY(-3px);
     outline: 0;
 }
 
@@ -316,8 +450,7 @@ footer p {
 
 .tech-row i {
     position: relative;
-    cursor: pointer;
-    transition: transform 0.25s ease, text-shadow 0.25s ease;
+    transition: none;
 }
 
 .devicon-javascript-plain {
@@ -356,11 +489,6 @@ footer p {
     color: #007acc;
 }
 
-.tech-row i:hover {
-    transform: translateY(-4px);
-    text-shadow: 0 0 12px currentColor;
-}
-
 .tech-row i::after {
     content: attr(data-name);
     position: absolute;
@@ -375,12 +503,7 @@ footer p {
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.tech-row i:hover::after {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-4px);
+    transition: none;
 }
 
 @media (min-width: 768px) {
@@ -409,6 +532,24 @@ footer p {
     .content-section {
         padding-top: 50px;
     }
+
+    .navbar {
+        min-height: 0;
+    }
+
+    .navbar-custom {
+        padding: 20px 0;
+        border-bottom: 0;
+        letter-spacing: 1px;
+        background: transparent;
+        transition: padding 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+    }
+
+    .navbar-custom.top-nav-collapse {
+        padding: 0;
+        border-bottom: 1px solid var(--soft-border);
+        background: #000;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -418,6 +559,19 @@ footer p {
 }
 
 @media (max-width: 767px) {
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    .navbar-header,
+    .navbar-right {
+        float: none !important;
+    }
+
+    .navbar-collapse {
+        display: block;
+    }
+
     .navbar-custom .navbar-brand {
         font-size: 2.2rem;
     }
@@ -453,6 +607,7 @@ footer p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .intro .tile-track,
     .intro::before {
         animation: none;
     }
