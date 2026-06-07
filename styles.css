@@ -1,4 +1,4 @@
-:root {
+:root { /* main theme color */
     --bg: #000;
     --text: #fff;
     --accent: #f84444;
@@ -216,7 +216,7 @@ img {
 .navbar-custom .navbar-brand {
     color: #fff;
     font-family: "Great Vibes", cursive;
-    font-size: 2.7rem;
+    font-size: 1.8rem;
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 0.95;
@@ -265,9 +265,7 @@ img {
 
 /* A scrolling tile track made of 4 segments (seg1, seg2, seg1, seg2).
     Each segment is viewport-wide and repeats its tile horizontally. The
-    track translates left continuously to simulate one long photo album
-    composed of the two tile images, looping seamlessly because the
-    sequence is duplicated. */
+    track translates left continuously to simulate one long photo album.  */
 .intro .tile-track {
     position: absolute;
     top: 0;
@@ -352,14 +350,14 @@ img {
     color: #f3f3f3;
 }
 
-.focus-panel {
+.big-red-box {
     margin: 8px 0 38px;
     padding: 20px 22px;
     border: 1px solid rgba(248, 68, 68, 0.45);
     background: linear-gradient(145deg, rgba(248, 68, 68, 0.07), var(--panel));
 }
 
-.focus-panel h4,
+.big-red-box h4,
 .tile-tech h4 {
     font-size: 22px;
     line-height: 1.2;
@@ -367,17 +365,12 @@ img {
     margin-bottom: 18px;
 }
 
-.focus-panel p {
+.big-red-box p {
     margin-bottom: 18px;
 }
 
-.focus-list {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.focus-list li {
-    margin-bottom: 8px;
+.accomplishments-list li {
+    margin-bottom: 10px;
     font-size: 17px;
 }
 
@@ -452,7 +445,7 @@ footer p {
     position: relative;
     transition: none;
 }
-
+/* Tech Skills Icons */
 .devicon-javascript-plain {
     color: #ffff00;
 }

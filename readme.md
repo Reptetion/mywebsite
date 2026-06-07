@@ -6,7 +6,6 @@
 
 This is my personal website and portfolio. Built by me using HTML, CSS, and Vanilla JS.
 - Icons and Fonts provided by Devicon and Google Fonts.
-- Grid system powered by Bootstrap v3.3.2
 - Photo collage template from photocollage.com
 
 All images and graphic elements displayed on the site are either owned or created by me.
