@@ -29,7 +29,7 @@
     <link href="styles.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Devicon CSS (for the tech icons)-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -44,6 +44,7 @@
 <header class="intro">
     <div class="container intro-shell">
         <nav class="site-brand" aria-label="Site name">
+            <!-- Change this font in styles.css if you want a different navbar look. -->
             <span>Aku Chuyum</span>
         </nav>
     </div>
@@ -53,7 +54,6 @@
             <div class="tile-strip">
                 <div class="tile-deck" style="--tile-image: url('images/website_intro_tile.jpg');"></div>
                 <div class="tile-deck" style="--tile-image: url('images/website_intro_tile2.jpg');"></div>
-                <!-- Add more deck line(s) here for each new photo collage. -->
             </div>
         </div>
     </div>
@@ -63,8 +63,6 @@
 <section id="main" class="container content-section">
 <div class="main-copy">
 
-    <!-- Intro text -->
-    <!-- <h2><span class="accent">Salut, Je m'appelle Aku!</span></h2> -->
     <p>
         I am a freelance developer from Canada. I
         work primarly with JavaScript, HTML & CSS, dealing mostly with web applications and digital design.
@@ -76,13 +74,10 @@
     <p>
         Outside of development, my hobbies include playing soccer and practicing the piano.
     </p>
-    <!-- <p class="text-center"><i><span style="color:#f84444">"INSERT INSIPIRATIONAL QUOTE"</span></i> -->
 
-    <!-- PROJETS et CERTIFICATIONS -->
     <div class="big-red-box" aria-label="accomplishments">
         <h4><span class="accent">🜲 PROJETS et CERTIFICATIONS</span></h4>
 
-        <!--Projects-->
         <p class="accent">Projets</p>
         <ul class="accomplishments-list">
             <li>
@@ -96,7 +91,6 @@
             </li>
         </ul>
 
-        <!--Certifications-->
         <p class="accent">Certifications</p>
         <ul class="accomplishments-list">
             <li>
@@ -109,7 +103,6 @@
         </ul>
     </div>
 
-    <!-- Tech Skills Icons -->
     <div class="tile-tech">
         <h4><span class="accent">Technologie / Compétences</span></h4>
     <div class="tech-row">
@@ -125,21 +118,15 @@
     </div>
     </div>
 
-    <!-- Social Links -->
     <ul class="banner-social-buttons">
-        <!-- Resume (disabled for now)
         <li>
-            <a href="Aku_Chuyum_Resume.pdf" class="btn btn-default btn-lg">🗎 <span class="network-name">Resume</span></a>
-        </li>
-        -->
-        <li>
-            <a href="mailto:prodbyakc@gmail.com" class="btn btn-default btn-lg">✉ <span class="network-name">Email</span></a>
+            <a href="mailto:prodbyakc@gmail.com" class="social-link">✉ <span>Email</span></a>
         </li>
         <li>
-            <a href="https://www.linkedin.com/in/akuchuyum/" class="btn btn-default btn-lg" target="_blank" rel="noreferrer">🌏︎ <span class="network-name">LinkedIn</span></a>
+            <a href="https://www.linkedin.com/in/akuchuyum/" class="social-link" target="_blank" rel="noreferrer">🌏︎ <span>LinkedIn</span></a>
         </li>
         <li>
-            <a href="https://github.com/Reptetion" class="btn btn-default btn-lg" target="_blank" rel="noreferrer">🛠 <span class="network-name">GitHub</span></a>
+            <a href="https://github.com/Reptetion" class="social-link" target="_blank" rel="noreferrer">🛠 <span>GitHub</span></a>
         </li>
     </ul>
 
