@@ -121,7 +121,7 @@ a {
     transform: translateZ(0);
 
     /* Intro collage speed: lower value = faster scroll, higher value = slower scroll */
-    animation: tileScroll 240s linear infinite;
+    animation: tileScroll 200s linear infinite;
 }
 
 .tile-strip {
@@ -204,7 +204,7 @@ a {
    SOCIAL BUTTONS
    ========================================================= */
 .banner-social-buttons {
-    /* Simple clickable links laid out like buttons. */
+    /* Clickable links laid out like buttons. */
     list-style: none;
     padding-left: 0;
     margin-top: 0;
